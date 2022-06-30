@@ -19,10 +19,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Petugas/Pasien
+// Petugas/perawat
+Route::get('petugas/perawat','Petugas\PerawatController@index')->name('petugas.perawat');
+Route::get('petugas/perawat/create','Petugas\PerawatController@create')->name('petugas.perawat.create');
+Route::post('petugas/perawat/store','Petugas\PerawatController@store')->name('petugas.perawat.store');
+
 Route::get('petugas/pasien','Petugas\PaseienController@index')->name('petugas.pasien');
 Route::get('petugas/pasien/create','Petugas\PaseienController@create')->name('petugas.pasien.create');
 Route::post('petugas/pasien/store','Petugas\PaseienController@store')->name('petugas.pasien.store');
+
+Route::get('petugas/dokter','Petugas\DokterController@index')->name('petugas.dokter');
+Route::get('petugas/dokter/create','Petugas\DokterController@create')->name('petugas.dokter.create');
+Route::post('petugas/dokter/store','Petugas\DokterController@store')->name('petugas.dokter.store');
 
 // Petugas/CTT_Perawat
 Route::get('petugas/ctt_perawat/{id}','Petugas\CTTPerawatController@index')->name('petugas.ctt_perawat');
