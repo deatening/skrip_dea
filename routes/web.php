@@ -40,3 +40,10 @@ Route::post('petugas/ctt_perawat/store','Petugas\CTTPerawatController@store')->n
 Route::get('perawat/ctt_perawat','perawat\CTTPerawatController@index')->name('perawat.ctt_perawat');
 Route::get('perawat/ctt_perawat/{id}','perawat\CTTPerawatController@edit')->name('perawat.ctt_perawat.edit');
 Route::post('perawat/ctt_perawat/{id}','perawat\CTTPerawatController@update')->name('perawat.ctt_perawat.update');
+Route::post('perawat/ctt_perawat/{id}/verifikasi','perawat\CTTPerawatController@verifikasi')->name('perawat.ctt_perawat.verifikasi');
+
+// Dokter/Rawat
+// Perawat/CTT_Perawat
+Route::get('dokter/rawat','Dokter\CTTController@index')->name('dokter.rawat');
+Route::get('dokter/rawat/{id}','Dokter\CTTController@edit')->name('dokter.rawat.edit');
+Route::post('dokter/rawat/{id}','Dokter\CTTController@update')->name('dokter.rawat.update');
