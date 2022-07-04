@@ -90,6 +90,8 @@
                                     <th>Nama Pasien</th>
                                     <th>Nama Perawat</th>
                                     <th>Soap</th>
+                                    <th>Rawat Inap/Jalan</th>
+                                    <td>Action</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -104,6 +106,63 @@
                                         <td>{{ $item->Pasien->name }}</td>
                                         <td>{{ $item->Perawat->name }}</td>
                                         <td>{{ $item->soap }}</td>
+                                        <td>
+                                            @if ($item->ver == '0')
+                                                Belum Dipilih
+                                            @elseif ($item->ver == '1')
+                                                Rawat Inap
+                                            @else
+                                                Rawat Jalan
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('petugas.ctt_perawat.show_lab', $item->id) }}"
+                                                target="_blank" class="btn btn-sm btn-success">Lab</a>
+                                            <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"
+                                                class="btn btn-sm btn-info">Diagnosa</a>
+                                            @if ($item->ver == '0')
+                                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+                                                    data-target="#exampleModal{{ $item->id }}">
+                                                    Status Rawat
+                                                </button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Verifikasi
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <form
+                                                                action="{{ route('petugas.ctt_perawat.verifikasi', $item->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <div class="modal-body">
+                                                                    Rawat Inap/Jalan :
+                                                                    <select name="ver" id=""
+                                                                        class="form-control">
+                                                                        <option value="">Pilih Rawat</option>
+                                                                        <option value="1">Rawat Inap</option>
+                                                                        <option value="2">Rawat Jalan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <input type="submit" class="btn btn-success"
+                                                                        value="Kirim">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

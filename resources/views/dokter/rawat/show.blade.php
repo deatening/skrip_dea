@@ -42,23 +42,23 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <textarea name="diagnosa" id="" cols="30" rows="5" class="form-control" placeholder="Diagnosa : ">{{ $rawat->diagnosa }}</textarea>
+                                        <textarea name="diagnosa" id="" readonly cols="30" rows="5" class="form-control" placeholder="Diagnosa : ">{{ $rawat->diagnosa }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <textarea name="" id="" cols="30" rows="5" class="form-control" readonly placeholder="">Dokter yang Memeriksa : {{ $rawat->Dokter->name }} </textarea>
+                                        <textarea name="" id="" cols="30" readonly rows="5" class="form-control" readonly placeholder="">Dokter yang Memeriksa : {{ $rawat->Dokter->name }} </textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea name="anamnesa" id="" cols="30" rows="7" class="form-control" placeholder="Anamnesa :">{{ $rawat->anamnesa }}</textarea>
+                                <textarea name="anamnesa" id="" cols="30" readonly rows="7" class="form-control" placeholder="Anamnesa :">{{ $rawat->anamnesa }}</textarea>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Pemeriksaan Fisik:</label>
-                                        <textarea name="pemeriksaan_fisik" id="editor" cols="30" rows="7" class="form-control" placeholder="">
+                                        <textarea name="pemeriksaan_fisik" id="" readonly cols="30" rows="7" class="form-control" placeholder="">
                                             @if ($rawat->pemeriksaan_fisik != null)
 {{ $rawat->pemeriksaan_fisik }}
 @else
@@ -74,7 +74,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Tanda-Tanda Vital:</label>
-                                        <textarea name="ttd_vital" id="editor" cols="30" rows="7" class="form-control" placeholder="">
+                                        <textarea name="ttd_vital" id="" cols="30" readonly readonly rows="7" class="form-control" placeholder="">
                                             @if ($rawat->ttd_vital != null)
 {{ $rawat->ttd_vital }}
 @else
@@ -91,12 +91,12 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <textarea name="infus" id="" cols="30" rows="5" class="form-control" placeholder="Infus : ">{{ $rawat->infus }}</textarea>
+                                        <textarea name="infus" id="" cols="30" rows="5" readonly class="form-control" placeholder="Infus : ">{{ $rawat->infus }}</textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <textarea name="injeksi" id="" cols="30" rows="5" class="form-control" placeholder="Injeksi :">{{ $rawat->injeksi }}</textarea>
+                                        <textarea name="injeksi" id="" cols="30" rows="5" readonly class="form-control" placeholder="Injeksi :">{{ $rawat->injeksi }}</textarea>
                                     </div>
                                 </div>
                             </div>

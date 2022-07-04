@@ -35,6 +35,9 @@ Route::post('petugas/dokter/store','Petugas\DokterController@store')->name('petu
 // Petugas/CTT_Perawat
 Route::get('petugas/ctt_perawat/{id}','Petugas\CTTPerawatController@index')->name('petugas.ctt_perawat');
 Route::post('petugas/ctt_perawat/store','Petugas\CTTPerawatController@store')->name('petugas.ctt_perawat.store');
+Route::get('petugas/ctt_perawat/{id}/show_lab','Petugas\CTTPerawatController@show_lab')->name('petugas.ctt_perawat.show_lab');
+Route::get('petugas/ctt_perawat/{id}/show','Petugas\CTTPerawatController@show')->name('petugas.ctt_perawat.show');
+Route::post('petugas/ctt_perawat/{id}/verifikasi','Petugas\CTTPerawatController@verifikasi')->name('petugas.ctt_perawat.verifikasi');
 
 // Perawat/CTT_Perawat
 Route::get('perawat/ctt_perawat','perawat\CTTPerawatController@index')->name('perawat.ctt_perawat');
@@ -47,3 +50,8 @@ Route::post('perawat/ctt_perawat/{id}/verifikasi','perawat\CTTPerawatController@
 Route::get('dokter/rawat','Dokter\CTTController@index')->name('dokter.rawat');
 Route::get('dokter/rawat/{id}','Dokter\CTTController@edit')->name('dokter.rawat.edit');
 Route::post('dokter/rawat/{id}','Dokter\CTTController@update')->name('dokter.rawat.update');
+Route::post('dokter/rawat/{id}/lab','Dokter\CTTController@lab')->name('dokter.rawat.lab');
+Route::get('dokter/rawat/{id}/show_lab','Dokter\CTTController@show_lab')->name('dokter.rawat.show_lab');
+Route::get('dokter/rawat/{id}/show','Dokter\CTTController@show')->name('dokter.rawat.show');
+Route::post('dokter/rawat/{id}/verifikasi','Dokter\CTTController@verifikasi')->name('dokter.rawat.verifikasi');
+

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2022 at 10:31 AM
+-- Generation Time: Jul 04, 2022 at 04:47 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -66,6 +66,8 @@ CREATE TABLE `ctt_perawat` (
   `id_user` int(50) DEFAULT NULL,
   `soap` text DEFAULT NULL,
   `id_perawat` int(11) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `ver` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -74,8 +76,9 @@ CREATE TABLE `ctt_perawat` (
 -- Dumping data for table `ctt_perawat`
 --
 
-INSERT INTO `ctt_perawat` (`id`, `id_user`, `soap`, `id_perawat`, `created_at`, `updated_at`) VALUES
-(1, 2, 'Aman', 3, '2022-06-27 10:56:09', '2022-06-27 11:43:06');
+INSERT INTO `ctt_perawat` (`id`, `id_user`, `soap`, `id_perawat`, `status`, `ver`, `created_at`, `updated_at`) VALUES
+(1, 2, 'Aman', 3, 1, 2, '2022-06-27 10:56:09', '2022-07-03 18:46:57'),
+(2, 2, 'asam lambung', 3, 0, 1, '2022-06-28 03:10:33', '2022-07-03 18:46:29');
 
 -- --------------------------------------------------------
 
@@ -172,9 +175,18 @@ CREATE TABLE `rawat_tinggal` (
   `injeksi` varchar(255) DEFAULT NULL,
   `ttd_vital` varchar(255) DEFAULT NULL,
   `id_ctt` varchar(255) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
+  `lab` varchar(225) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `rawat_tinggal`
+--
+
+INSERT INTO `rawat_tinggal` (`id`, `diagnosa`, `id_user`, `anamnesa`, `pemeriksaan_fisik`, `infus`, `injeksi`, `ttd_vital`, `id_ctt`, `status`, `lab`, `created_at`, `updated_at`) VALUES
+(1, 'Vertigo', 6, 'sa', '<p>Kepala/Leher : 20</p>\r\n<p>Thorax : 21</p>\r\n<p>Abdomen : 21</p>\r\n<p>Ekstremitas : 21</p>', 'sa', NULL, '<p>TD : 20</p>\r\n<p>Nadi : 20</p>\r\n<p>RR : 20</p>\r\n<p>Suhu :20</p>', '1', 2, '1656895956_post10.jpg', '2022-07-02 11:00:56', '2022-07-03 17:02:14');
 
 -- --------------------------------------------------------
 
@@ -232,6 +244,7 @@ CREATE TABLE `users` (
   `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_kesehatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jk` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bidang` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role` int(11) DEFAULT 0,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -245,10 +258,13 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `tgl_lahir`, `tmp_lahir`, `kerja`, `alamat`, `no_kk`, `hubungan`, `status`, `no_kesehatan`, `jk`, `role`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'admin@gmail.com', NULL, '$2y$10$QPQ6DJBviWFr4qk9cKyLJeXwjxmd4VsaJTo0YipcT6Ihou5PnqsEC', NULL, '2022-06-26 04:03:48', '2022-06-26 04:03:48'),
-(2, 'Rian', '2000-02-12', 'Balikpapan', 'Mahasiswa', 'Gunung Bakaran', '46', 'Anak', 'Belum Menikah', '645', 'Laki-laki', 0, NULL, NULL, NULL, NULL, '2022-06-27 10:24:56', '2022-06-27 10:24:56'),
-(3, 'Dea', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 'perawat@gmail.com', NULL, '$2y$10$QPQ6DJBviWFr4qk9cKyLJeXwjxmd4VsaJTo0YipcT6Ihou5PnqsEC', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `tgl_lahir`, `tmp_lahir`, `kerja`, `alamat`, `no_kk`, `hubungan`, `status`, `no_kesehatan`, `jk`, `bidang`, `role`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 'admin@gmail.com', NULL, '$2y$10$QPQ6DJBviWFr4qk9cKyLJeXwjxmd4VsaJTo0YipcT6Ihou5PnqsEC', NULL, '2022-06-26 04:03:48', '2022-06-26 04:03:48'),
+(2, 'Rian', '2000-02-12', 'Balikpapan', 'Mahasiswa', 'Gunung Bakaran', '46', 'Anak', 'Belum Menikah', '645', 'Laki-laki', NULL, 0, NULL, NULL, NULL, NULL, '2022-06-27 10:24:56', '2022-06-27 10:24:56'),
+(3, 'Dea', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, 'perawat@gmail.com', NULL, '$2y$10$QPQ6DJBviWFr4qk9cKyLJeXwjxmd4VsaJTo0YipcT6Ihou5PnqsEC', NULL, NULL, NULL),
+(4, 'sely', '2007-12-31', 'Samarinda', 'Siswa', 'Kampung Jawa', '54', 'Anak', NULL, '45', 'Perempuan', NULL, 0, NULL, NULL, NULL, NULL, '2022-06-28 03:10:07', '2022-06-28 03:10:07'),
+(5, 'Siska', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Perempuan', NULL, 2, 'siska@gmail.com', NULL, '$2y$10$KLCPFyllh5R3CEspweXJYO.9FUtSZj.AfnWLONo3pkQAksAOJzyWe', NULL, '2022-06-29 07:34:02', '2022-06-29 07:34:02'),
+(6, 'Dokter', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Laki-laki', 'Mata', 3, 'dokter@gmail.com', NULL, '$2y$10$nF480XQSt9d.i/qoDrbi1OckR5XqPFObykm3XkuIgDoES6Gp.67Li', NULL, '2022-06-29 07:40:28', '2022-06-29 07:40:28');
 
 --
 -- Indexes for dumped tables
@@ -348,7 +364,7 @@ ALTER TABLE `catatan_persalinan`
 -- AUTO_INCREMENT for table `ctt_perawat`
 --
 ALTER TABLE `ctt_perawat`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -378,7 +394,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `rawat_tinggal`
 --
 ALTER TABLE `rawat_tinggal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `riwayat_kehamilan`
@@ -396,7 +412,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

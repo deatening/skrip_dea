@@ -20,6 +20,16 @@ class CTTController extends Controller
         return view('dokter.rawat.edit',compact('rawat'));
     }
 
+    public function show($id){
+        $rawat = Rawat::find($id);
+        return view('dokter.rawat.show',compact('rawat'));
+    }
+
+    public function show_lab($id){
+        $rawat = Rawat::find($id);
+        return view('dokter.rawat.lab',compact('rawat'));
+    }
+
     public function update(Request $request,$id){
         $rawat = Rawat::find($id);
         $rawat->diagnosa = $request->diagnosa;
@@ -28,6 +38,25 @@ class CTTController extends Controller
         $rawat->infus = $request->infus;
         $rawat->injeksi = $request->injeksi;
         $rawat->ttd_vital = $request->ttd_vital;
+        $rawat->status = '1';
+        $rawat->save();
+        return redirect('dokter/rawat');
+    }
+
+    public function lab(Request $request,$id){
+        $rawat = Rawat::find($id);
+        $file = $request->file('file');
+        $nama_file = time() . "_" . $file->getClientOriginalName();
+        $tujuan_upload = 'data/lab';
+        $file->move($tujuan_upload, $nama_file);
+        $rawat->lab = $nama_file;
+        $rawat->save();
+        return redirect('dokter/rawat');
+    }
+
+    public function verifikasi(Request $request,$id){
+        $rawat = Rawat::find($id);
+        $rawat->status = '2'; 
         $rawat->save();
         return redirect('dokter/rawat');
     }
