@@ -34,7 +34,8 @@
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->jk}}</td>
                                         <td>
-                                            <a href="{{route('petugas.ctt_perawat',$item->id)}}" class="btn btn-sm btn-info">Riwayat</a>
+                                            <a href="{{route('petugas.ctt_perawat',$item->id)}}" class="btn btn-sm btn-info">Riwayat Rawat</a>
+                                            <a href="{{route('petugas.ctt_persalinan',$item->id)}}" class="btn btn-sm btn-primary">Riwayat Bidan</a>
                                         </td>
                                     </tr>
                                 @endforeach

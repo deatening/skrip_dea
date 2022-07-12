@@ -94,6 +94,12 @@
                                             class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
                                             Perawat</span></a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        href="{{ route('perawat.ctt_persalinan') }}" aria-expanded="false"><i
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
+                                            Persalinan</span></a>
+                                </li>
                             @elseif(Auth::user()->role == '3')
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/home"
@@ -105,6 +111,11 @@
                                         href="{{ route('dokter.rawat') }}" aria-expanded="false"><i
                                             class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
                                             Dokter</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.asuhan') }}"
+                                        aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                            class="hide-menu">Catatan Persalinan</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.rawat.jenis') }}"
