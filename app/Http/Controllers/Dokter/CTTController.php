@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dokter;
 
 use App\Http\Controllers\Controller;
+use App\Model\CttPerawat;
 use App\Model\Rawat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +16,11 @@ class CTTController extends Controller
         return view('dokter.rawat.index',compact('no','rawat'));
     }
 
+    public function jalan($id){
+        $no = 1;
+        $rawat = CttPerawat::where('ver',$id)->get();
+        return view('dokter.rawat.jalan',compact('no','rawat'));
+    }
     public function edit($id){
         $rawat = Rawat::find($id);
         return view('dokter.rawat.edit',compact('rawat'));
@@ -60,4 +66,9 @@ class CTTController extends Controller
         $rawat->save();
         return redirect('dokter/rawat');
     }
+    public function jenis(){
+        return view('dokter.rawat.rawat');
+    }
+   
+
 }

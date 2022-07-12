@@ -15,12 +15,6 @@
                     <div class="card-header">Pasien</div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
                         <form action="{{ route('dokter.rawat.update', $rawat->id) }}" method="post">
                             @csrf
                             <div class="form-group">

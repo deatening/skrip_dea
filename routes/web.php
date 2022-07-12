@@ -47,6 +47,7 @@ Route::post('perawat/ctt_perawat/{id}/verifikasi','perawat\CTTPerawatController@
 
 // Dokter/Rawat
 // Perawat/CTT_Perawat
+Route::get('dokter/rawat/jenis','Dokter\CTTController@jenis')->name('dokter.rawat.jenis');
 Route::get('dokter/rawat','Dokter\CTTController@index')->name('dokter.rawat');
 Route::get('dokter/rawat/{id}','Dokter\CTTController@edit')->name('dokter.rawat.edit');
 Route::post('dokter/rawat/{id}','Dokter\CTTController@update')->name('dokter.rawat.update');
@@ -54,4 +55,4 @@ Route::post('dokter/rawat/{id}/lab','Dokter\CTTController@lab')->name('dokter.ra
 Route::get('dokter/rawat/{id}/show_lab','Dokter\CTTController@show_lab')->name('dokter.rawat.show_lab');
 Route::get('dokter/rawat/{id}/show','Dokter\CTTController@show')->name('dokter.rawat.show');
 Route::post('dokter/rawat/{id}/verifikasi','Dokter\CTTController@verifikasi')->name('dokter.rawat.verifikasi');
-
+Route::get('dokter/rawat/{id}/jalan','Dokter\CTTController@jalan')->name('dokter.rawat.jalan');;
