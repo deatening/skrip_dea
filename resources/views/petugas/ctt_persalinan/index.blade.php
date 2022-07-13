@@ -110,8 +110,12 @@
                                         <td>{{ $item->terapi }}</td>
                                         <td>{{ $item->penolong }}</td>
                                         <td>
-                                            <a href="{{ route('petugas.ctt_persalinan.asuhan', $item->Asuhan->id_ctt_p) }}"
-                                                class="btn btn-sm btn-warning">Asuhan Kebidanan</a>
+                                            @if ($item->status == '0')
+                                                -
+                                            @else
+                                                <a href="{{ route('petugas.ctt_persalinan.asuhan', $item->Asuhan->id_ctt_p) }}"
+                                                    class="btn btn-sm btn-warning">Asuhan Kebidanan</a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
