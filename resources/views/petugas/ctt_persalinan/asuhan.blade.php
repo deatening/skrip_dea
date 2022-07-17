@@ -22,7 +22,7 @@
                                     <tr>
                                         <td rowspan="2">Nama Pasien : {{ $asuhan->CTTPersalinan->Pasien->name }}</td>
                                         <td>Tanggal Lahir : {{ $asuhan->CTTPersalinan->Pasien->tgl_lahir }}</td>
-                                        <td rowspan="2"> Lihat Juga Lain Catatan:</td>
+                                        <!-- <td rowspan="2"> Lihat Juga Lain Catatan:</td> -->
                                     </tr>
 
                                     <tr>

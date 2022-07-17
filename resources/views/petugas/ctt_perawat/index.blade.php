@@ -115,7 +115,7 @@
                                                 Rawat Jalan
                                             @endif
                                         </td>
-                                        <td>
+                                        <td style="width: 220px;">
                                             <a href="{{ route('petugas.ctt_perawat.show_lab', $item->id) }}"
                                                 target="_blank" class="btn btn-sm btn-success">Lab</a>
                                             <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"

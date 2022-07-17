@@ -89,9 +89,9 @@
                                     <th>Tanggal</th>
                                     <th>Nama Pasien</th>
                                     <th>Nama Perawat</th>
-                                    <th>Persalinan</th>
+                                    <th>HPHT</th>
                                     <th>Terapi</th>
-                                    <th>Penolong <br> Persalinan</th>
+                                    <th>Nama Bidan</th>
                                     <td>Action</td>
                                 </tr>
                             </thead>

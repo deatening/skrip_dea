@@ -22,7 +22,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Pasien</th>
+                                    <th>Nama Perawat</th>
                                     <th>Jenis Kelamin</th>
                                 </tr>
                             </thead>

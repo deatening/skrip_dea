@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien</div>
+                    <div class="card-header">Catatan Persalinan</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -39,7 +39,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Tanggal</th>
-                                    <th>Dokter</th>
+                                    <th>Dokter/Bidan</th>
                                     <th>Nama Pasien</th>
                                     <th>Action</th>
                                 </tr>

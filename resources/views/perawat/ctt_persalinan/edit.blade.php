@@ -31,16 +31,16 @@
                                 </table>
                             </div>
                             <div class="form-group">
-                                <label for="">Persalinan</label>
-                                <textarea name="persalinan" id="" cols="30" rows="4" class="form-control" placeholder="Persalinan">{{$ctt->persalinan}}</textarea>
+                                <label for="">Anamnese</label>
+                                <textarea name="persalinan" id="" cols="30" rows="4" class="form-control" placeholder="Anamnese">{{$ctt->persalinan}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">Terapi</label>
                                 <textarea name="terapi" id="" cols="30" rows="4" class="form-control" placeholder="Terapi">{{$ctt->terapi}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="">penolong Persalinan</label>
-                                <textarea name="penolong" id="" cols="30" rows="4" class="form-control" placeholder="penolong">{{$ctt->penolong}}</textarea>
+                                <label for="">Nama Bidan</label>
+                                <textarea name="penolong" id="" cols="30" rows="4" class="form-control" placeholder="Nama Bidan">{{$ctt->penolong}}</textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Update" class="btn btn-sm btn-success">

@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien</div>
+                    <div class="card-header">Catatan Perawat</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -92,9 +92,9 @@
                                                                        <input type="text" value="{{$item->Perawat->name}}" readonly class="form-control">
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="">Dokter</label>
+                                                                        <label for="">Dokter/Bidan</label>
                                                                         <select name="id_dokter" id="" class="form-control">
-                                                                            <option value="">Pilih Dokter</option>
+                                                                            <option value="">Pilih Dokter/Bidan</option>
                                                                             @foreach ($user as $dok)
                                                                                 <option value="{{$dok->id}}">{{$dok->name}} - {{$dok->bidang}}</option>
                                                                             @endforeach
