@@ -90,7 +90,6 @@
                                     <th>Nama Pasien</th>
                                     <th>Nama Perawat</th>
                                     <th>Soap</th>
-                                    <th>Rawat Inap/Jalan</th>
                                     <td>Action</td>
                                 </tr>
                             </thead>
@@ -106,15 +105,6 @@
                                         <td>{{ $item->Pasien->name }}</td>
                                         <td>{{ $item->Perawat->name }}</td>
                                         <td>{{ $item->soap }}</td>
-                                        <td>
-                                            @if ($item->ver == '0')
-                                                Belum Dipilih
-                                            @elseif ($item->ver == '1')
-                                                Rawat Inap
-                                            @else
-                                                Rawat Jalan
-                                            @endif
-                                        </td>
                                         <td style="width: 220px;">
                                             @if ($item->status == '1')
                                                 <a href="{{ route('petugas.ctt_perawat.show_lab', $item->id) }}"
