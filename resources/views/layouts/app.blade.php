@@ -32,12 +32,13 @@
                 <div class="navbar-header" data-logobg="skin5">
                     <a class="navbar-brand" href="index.html">
                         <b class="logo-icon ps-2">
-                            <img src="{{ asset('asset/assets/images/logo-icon.png') }}" alt="homepage"
-                                class="light-logo" width="25" />
+                            {{-- <img src="{{ asset('logo.jpeg') }}" alt="homepage"
+                                class="light-logo" width="25" /> --}}
+                                Puskesmas Long Hubung
                         </b>
                         <span class="logo-text ms-2">
-                            <img src="{{ asset('asset/assets/images/logo-text.png') }}" alt="homepage"
-                                class="light-logo" />
+                            {{-- <img src="{{ asset('asset/assets/images/logo-text.png') }}" alt="homepage"
+                                class="light-logo" /> --}}
                         </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
