@@ -44,6 +44,7 @@ class CTTController extends Controller
         $rawat->infus = $request->infus;
         $rawat->injeksi = $request->injeksi;
         $rawat->ttd_vital = $request->ttd_vital;
+        $rawat->rj = $request->rj;
         $rawat->status = '1';
         $rawat->save();
         return redirect('dokter/rawat');

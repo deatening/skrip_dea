@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien</div>
+                    <div class="card-header">Asuhan</div>
 
                     <div class="card-body">
                         <form action="{{ route('dokter.asuhan.update', $asuhan->id) }}" method="post">

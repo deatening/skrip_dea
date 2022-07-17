@@ -22,14 +22,19 @@
                                     <tr>
                                         <td rowspan="2">Nama Pasien : {{ $rawat->CTTPerawat->Pasien->name }}</td>
                                         <td>Tanggal Lahir : {{ $rawat->CTTPerawat->Pasien->tgl_lahir }}</td>
-                                        <td rowspan="2"> Lihat Juga Lain Catatan:</td>
-                                    </tr>
-
+                                        <td rowspan="2">No KK: {{ $rawat->CTTPerawat->Pasien->no_kk }}</td>
+                                        <td rowspan="2">Pekerjaan : {{ $rawat->CTTPerawat->Pasien->kerja }}</td>
+    
                                     <tr>
-                                        <td>Jenis Kelamin : {{ $rawat->CTTPerawat->Pasien->jk }} </td>
+                                        <td rowspan="2">No Kesehatan : {{ $rawat->CTTPerawat->Pasien->no_kesehatan }}</td>
                                     </tr>
+                                    <td>Hubungan : {{ $rawat->CTTPerawat->Pasien->hubungan }}</td>
+                                    <td>Jenis Kelamin : {{ $rawat->CTTPerawat->Pasien->jk }} </td>
+                                    <td>Alamat : {{ $rawat->CTTPerawat->Pasien->alamat }}</td>
+                                    </tr>
+    
+    
                                     <tr>
-                                        <td colspan="3">Alamat : {{ $rawat->CTTPerawat->Pasien->alamat }}</td>
                                     </tr>
                                 </table>
                             </div>
@@ -44,6 +49,14 @@
                                         <textarea name="" id="" cols="30" rows="5" class="form-control" readonly placeholder="">Dokter yang Memeriksa : {{ $rawat->Dokter->name }} </textarea>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Status Rawat</label>
+                                <select name="rj" id="" class="form-control">
+                                    <option value="">Status Rawat</option>
+                                    <option value="Rawat Jalan">Rawat Jalan</option>
+                                    <option value="Rawat Inap">Rawat Inap</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <textarea name="anamnesa" id="" cols="30" rows="7" class="form-control" placeholder="Anamnesa :">{{ $rawat->anamnesa }}</textarea>

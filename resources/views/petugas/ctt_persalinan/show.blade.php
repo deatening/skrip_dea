@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien</div>
+                    <div class="card-header">Catatan Persalinan Detaill</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -48,12 +48,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label for="">Dokter:</label>
                                         <textarea name="" id="" cols="30" readonly rows="5" class="form-control" readonly
                                             placeholder="">Dokter yang Memeriksa : {{ $rawat->Dokter->name }} </textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="">Anamnesa:</label>
                                 <textarea name="anamnesa" id="" cols="30" readonly rows="7" class="form-control"
                                     placeholder="Anamnesa :">{{ $rawat->anamnesa }}</textarea>
                             </div>

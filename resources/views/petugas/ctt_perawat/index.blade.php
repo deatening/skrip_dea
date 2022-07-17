@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien
+                    <div class="card-header">Catatan Perawat
                         <div style="float: right">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
@@ -116,51 +116,57 @@
                                             @endif
                                         </td>
                                         <td style="width: 220px;">
-                                            <a href="{{ route('petugas.ctt_perawat.show_lab', $item->id) }}"
-                                                target="_blank" class="btn btn-sm btn-success">Lab</a>
-                                            <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"
-                                                class="btn btn-sm btn-info">Diagnosa</a>
-                                            @if ($item->ver == '0')
-                                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
-                                                    data-target="#exampleModal{{ $item->id }}">
-                                                    Status Rawat
-                                                </button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1"
-                                                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Verifikasi
-                                                                </h5>
-                                                                <button type="button" class="close" data-dismiss="modal"
-                                                                    aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
+                                            @if ($item->status == '1')
+                                                <a href="{{ route('petugas.ctt_perawat.show_lab', $item->id) }}"
+                                                    target="_blank" class="btn btn-sm btn-success">Lab</a>
+                                                <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"
+                                                    class="btn btn-sm btn-info">Diagnosa</a>
+                                            @endif
+                                            @if ($item->status == '1')
+                                                @if ($item->ver == '0')
+                                                    {{-- <button type="button" class="btn btn-sm btn-primary"
+                                                        data-toggle="modal" data-target="#exampleModal{{ $item->id }}">
+                                                        Status Rawat
+                                                    </button>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $item->id }}"
+                                                        tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">
+                                                                        Verifikasi
+                                                                    </h5>
+                                                                    <button type="button" class="close"
+                                                                        data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <form
+                                                                    action="{{ route('petugas.ctt_perawat.verifikasi', $item->id) }}"
+                                                                    method="post">
+                                                                    @csrf
+                                                                    <div class="modal-body">
+                                                                        Rawat Inap/Jalan :
+                                                                        <select name="ver" id=""
+                                                                            class="form-control">
+                                                                            <option value="">Pilih Rawat</option>
+                                                                            <option value="1">Rawat Inap</option>
+                                                                            <option value="2">Rawat Jalan</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <input type="submit" class="btn btn-success"
+                                                                            value="Kirim">
+                                                                    </div>
+                                                                </form>
                                                             </div>
-                                                            <form
-                                                                action="{{ route('petugas.ctt_perawat.verifikasi', $item->id) }}"
-                                                                method="post">
-                                                                @csrf
-                                                                <div class="modal-body">
-                                                                    Rawat Inap/Jalan :
-                                                                    <select name="ver" id=""
-                                                                        class="form-control">
-                                                                        <option value="">Pilih Rawat</option>
-                                                                        <option value="1">Rawat Inap</option>
-                                                                        <option value="2">Rawat Jalan</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary"
-                                                                        data-dismiss="modal">Close</button>
-                                                                    <input type="submit" class="btn btn-success"
-                                                                        value="Kirim">
-                                                                </div>
-                                                            </form>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                    </div> --}}
+                                                @endif
                                             @endif
                                         </td>
                                     </tr>

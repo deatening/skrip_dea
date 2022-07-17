@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien
+                    <div class="card-header">Catatan Persalinan
                         <div style="float: right">
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
