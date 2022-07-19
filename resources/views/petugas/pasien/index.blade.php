@@ -40,7 +40,7 @@
                                             ->where('id', $ups->id_user)
                                             ->first();
                                         if ($use != null) {
-                                            echo $id_users = $use->name;
+                                             $id_users = $use->name;
                                         } 
                                     @endphp
                                     <tr>
