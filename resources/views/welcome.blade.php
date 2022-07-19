@@ -85,7 +85,7 @@
                     <img src="1.jpeg" style="width: 250px;" alt="">
                     <img src="3.jpeg" style="width: 250px;" alt="">
                 </div>
-                <h1>Puskesmas Loa Hubung</h1>
+                <h1>Puskesmas Long Hubung</h1>
                 <div class="links">
                  
                 </div>
