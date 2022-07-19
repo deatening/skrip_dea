@@ -26,6 +26,19 @@ class CTTPersalinanController extends Controller
         $asuhan = Asuhan::where('id_ctt_p',$id)->first();
         return view('petugas.ctt_persalinan.asuhan',compact('asuhan'));
     }
+
+    public function laporan_cttPer()
+    {
+        return view('petugas.ctt_persalinan.lap_cttp');
+    }
+
+    public function store_laporan_cttPer(Request $request)
+    {
+        $no = 1;
+        $tgl = date('Y-m-d', strtotime($request->tgl));
+        $ctt = CttPersalinan::whereDate('created_at', $tgl)->get();
+        return view('petugas.ctt_persalinan.lap_cttp', compact('ctt', 'no','tgl'));
+    }
     // public function show($id){
     //     $rawat = Asuhan::find($id);
     //     return view('petugas.ctt_persalinan.show',compact('rawat'));

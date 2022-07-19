@@ -29,6 +29,7 @@ Route::get('petugas/pasien','Petugas\PaseienController@index')->name('petugas.pa
 Route::get('petugas/pasien/create','Petugas\PaseienController@create')->name('petugas.pasien.create');
 Route::post('petugas/pasien/store','Petugas\PaseienController@store')->name('petugas.pasien.store');
 
+
 // Petugas/dokter
 Route::get('petugas/dokter','Petugas\DokterController@index')->name('petugas.dokter');
 Route::get('petugas/dokter/create','Petugas\DokterController@create')->name('petugas.dokter.create');
@@ -40,12 +41,15 @@ Route::post('petugas/ctt_perawat/store','Petugas\CTTPerawatController@store')->n
 Route::get('petugas/ctt_perawat/{id}/show_lab','Petugas\CTTPerawatController@show_lab')->name('petugas.ctt_perawat.show_lab');
 Route::get('petugas/ctt_perawat/{id}/show','Petugas\CTTPerawatController@show')->name('petugas.ctt_perawat.show');
 Route::post('petugas/ctt_perawat/{id}/verifikasi','Petugas\CTTPerawatController@verifikasi')->name('petugas.ctt_perawat.verifikasi');
+Route::get('petugas/lap_ctt_p','Petugas\CTTPerawatController@laporan_cttP')->name('petugas.laporan_ctt_p');
+Route::post('petugas/lap_ctt_p/store','Petugas\CTTPerawatController@store_laporan_cttP')->name('petugas.lap_ctt_p.store');
 
 // Petugas/CTT_Persalinan
 Route::get('petugas/ctt_persalinan/{id}','Petugas\CTTPersalinanController@index')->name('petugas.ctt_persalinan');
 Route::post('petugas/ctt_persalinan/store','Petugas\CTTPersalinanController@store')->name('petugas.ctt_persalinan.store');
 Route::get('petugas/ctt_persalinan/{id}/asuhan','Petugas\CTTPersalinanController@asuhan')->name('petugas.ctt_persalinan.asuhan');
-
+Route::get('petugas/lap_ctt_per','Petugas\CTTPersalinanController@laporan_cttPer')->name('petugas.laporan_ctt_per');
+Route::post('petugas/lap_ctt_per/store','Petugas\CTTPersalinanController@store_laporan_cttPer')->name('petugas.lap_ctt_per.store');
 // Perawat/CTT_Perawat
 Route::get('perawat/ctt_perawat','perawat\CTTPerawatController@index')->name('perawat.ctt_perawat');
 Route::get('perawat/ctt_perawat/{id}','perawat\CTTPerawatController@edit')->name('perawat.ctt_perawat.edit');

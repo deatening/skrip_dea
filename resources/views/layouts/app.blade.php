@@ -83,6 +83,16 @@
                                         href="{{ route('petugas.pasien') }}" aria-expanded="false"><i
                                             class="mdi mdi-view-dashboard"></i><span class="hide-menu">Pasien</span></a>
                                 </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        href="{{ route('petugas.laporan_ctt_p') }}" aria-expanded="false"><i
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Catatan Rawat Inap</span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                        href="{{ route('petugas.laporan_ctt_per') }}" aria-expanded="false"><i
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Catatan Persalinan</span></a>
+                                </li>
                             @elseif(Auth::user()->role == '2')
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/home"
