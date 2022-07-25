@@ -38,10 +38,10 @@
                                 <label for="">Terapi</label>
                                 <textarea name="terapi" id="" cols="30" rows="4" class="form-control" placeholder="Terapi">{{$ctt->terapi}}</textarea>
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="">Nama Bidan</label>
                                 <textarea name="penolong" id="" cols="30" rows="4" class="form-control" placeholder="Nama Bidan">{{$ctt->penolong}}</textarea>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <input type="submit" value="Update" class="btn btn-sm btn-success">
                             </div>

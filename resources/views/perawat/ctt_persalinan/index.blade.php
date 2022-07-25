@@ -60,7 +60,7 @@
                                         <td>{{ $item->Perawat->name }}</td>
                                         <td>{{ $item->persalinan }}</td>
                                         <td>{{ $item->terapi }}</td>
-                                        <td>{{ $item->penolong }}</td>
+                                        {{-- <td>{{ $item->penolong }}</td> --}}
                                         <td>
                                             @if ($item->status == '0')
                                                 <a href="{{ route('perawat.ctt_persalinan.edit', $item->id) }}"
