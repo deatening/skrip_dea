@@ -34,6 +34,10 @@
                                 </table>
                             </div>
                             <div class="form-group">
+                                <label for="">Rawat </label>
+                                <?= $asuhan->rj?>
+                            </div>
+                            <div class="form-group">
                                 <label for="">1. Riwayat Mensturasi</label>
                                 <?= $asuhan->riwayat_mensturasi?>
                             </div>
