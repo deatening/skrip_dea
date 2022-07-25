@@ -35,7 +35,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Rawat</label>
-                                <select name="rj" id="">
+                                <select name="rj" id="" class="form-control">
                                     <option value="">Pilih Rawat</option>
                                     <option value="Rawat Inap">Rawat Inap</option>
                                     <option value="Rawat Jalan">Rawat Jalan</option>
