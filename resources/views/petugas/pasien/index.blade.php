@@ -30,54 +30,18 @@
                             <tbody>
                                 @php
                                 @endphp
-                                @foreach ($pengguna as $users)
-                                    @php
-                                        $ups = DB::table('ctt_perawat')
-                                            ->where('id_user', $users->id_user)
-                                            ->orderBy('created_at', 'DESC')
-                                            ->first();
-                                        $use = DB::table('users')
-                                            ->where('id', $ups->id_user)
-                                            ->first();
-                                        if ($use != null) {
-                                             $id_users = $use->name;
-                                        } 
-                                    @endphp
+                                @foreach ($user as $item)
                                     <tr>
                                         <td>{{ $no++ }}</td>
-                                        <td>{{ $id_users }}</td>
-                                        <td>{{ $users->Pasien->jk }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->jk }}</td>
                                         <td>
-                                            <a href="{{ route('petugas.ctt_perawat', $users->id_user) }}"
+                                            <a href="{{ route('petugas.ctt_perawat', $item->id) }}"
                                                 class="btn btn-sm btn-info">Riwayat Rawat</a>
-                                            <a href="{{ route('petugas.ctt_persalinan', $users->id_user) }}"
+                                            <a href="{{ route('petugas.ctt_persalinan', $item->id) }}"
                                                 class="btn btn-sm btn-primary">Riwayat Bidan</a>
                                         </td>
                                     </tr>
-                                @endforeach
-                                @foreach ($user as $item)
-                                    @php
-                                        $up = DB::table('ctt_perawat')
-                                            ->where('id_user', $item->id)
-                                            ->orderBy('created_at', 'DESC')
-                                            ->first();
-                                        if ($up != null) {
-                                           echo $id_user = $up->id_user;
-                                        }
-                                    @endphp
-                                    @if ($id_user != $item->id)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td>{{ $item->jk }}</td>
-                                            <td>
-                                                <a href="{{ route('petugas.ctt_perawat', $item->id) }}"
-                                                    class="btn btn-sm btn-info">Riwayat Rawat</a>
-                                                <a href="{{ route('petugas.ctt_persalinan', $item->id) }}"
-                                                    class="btn btn-sm btn-primary">Riwayat Bidan</a>
-                                            </td>
-                                        </tr>
-                                    @endif
                                 @endforeach
                             </tbody>
                         </table>
