@@ -89,7 +89,7 @@
                                     <th>Tanggal</th>
                                     <th>Nama Pasien</th>
                                     <th>Nama Perawat</th>
-                                    <th>HPHT</th>
+                                    <th>Anamnese</th>
                                     <th>Terapi</th>
                                     <th>Nama Bidan</th>
                                     <td>Action</td>

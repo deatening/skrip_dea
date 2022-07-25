@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">Pasien
+                    <div class="card-header">Perawat
                         <div style="float: right">
                             <a href="{{route('petugas.perawat.create')}}" class="btn btn-sm btn-primary">+</a>
                         </div>

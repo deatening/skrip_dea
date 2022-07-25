@@ -62,7 +62,7 @@
                                             ->orderBy('created_at', 'DESC')
                                             ->first();
                                         if ($up != null) {
-                                            $id_user = $up->id_user;
+                                           echo $id_user = $up->id_user;
                                         }
                                     @endphp
                                     @if ($id_user != $item->id)
