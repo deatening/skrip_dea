@@ -43,7 +43,7 @@
                                     <th>Nama Perawat</th>
                                     <th>Anamnese</th>
                                     <th>Terapi</th>
-                                    <th>Nama Bidan</th>
+                                    {{-- <th>Nama Bidan</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
