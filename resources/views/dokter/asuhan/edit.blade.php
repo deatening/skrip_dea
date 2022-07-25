@@ -34,6 +34,14 @@
                                 </table>
                             </div>
                             <div class="form-group">
+                                <label for="">Rawat</label>
+                                <select name="rj" id="">
+                                    <option value="">Pilih Rawat</option>
+                                    <option value="Rawat Inap">Rawat Inap</option>
+                                    <option value="Rawat Jalan">Rawat Jalan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="">1. Riwayat Mensturasi</label>
                                 <textarea name="riwayat_mensturasi" id="editor" cols="30" rows="5" class="form-control"
                                     placeholder="Riwayat Mensturasi : ">
