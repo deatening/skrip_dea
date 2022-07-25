@@ -32,7 +32,8 @@ class CTTController extends Controller
     }
 
     public function show_lab($id){
-        $rawat = Rawat::find($id);
+        // $rawat = Rawat::find($id);
+        $rawat = Rawat::where('id_ctt',$id)->first();
         return view('dokter.rawat.lab',compact('rawat'));
     }
 

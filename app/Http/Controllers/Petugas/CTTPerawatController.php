@@ -27,14 +27,14 @@ class CTTPerawatController extends Controller
 
     public function show($id)
     {
-        $rawat = Rawat::where('id_ctt',$id)->first();
-        // $rawat = Rawat::find($id);
+        $rawat = Rawat::find($id);
         return view('petugas.ctt_perawat.show', compact('rawat'));
     }
 
     public function show_lab($id)
     {
-        $rawat = Rawat::find($id);
+        // $rawat = Rawat::find($id);
+        $rawat = Rawat::where('id_ctt',$id)->first();
         return view('petugas.ctt_perawat.lab', compact('rawat'));
     }
 
