@@ -17,7 +17,6 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-
                         <table class="table table-sm table-bordered" id="zero_config">
                             <thead>
                                 <tr>
@@ -28,23 +27,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
-                                @endphp
-                                @foreach ($user as $item)
-                                    <tr>
-                                        <td>{{ $no++ }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->jk }}</td>
-                                        <td>
-                                            <a href="{{ route('petugas.ctt_perawat', $item->id) }}"
-                                                class="btn btn-sm btn-info">Riwayat Rawat</a>
-                                            <a href="{{ route('petugas.ctt_persalinan', $item->id) }}"
-                                                class="btn btn-sm btn-primary">Riwayat Bidan</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                <?php
+                            $kon = mysqli_connect('localhost', 'root', '', 'skripsi_dea');
+                            $CTT = mysqli_query($kon, 'SELECT * FROM ctt_perawat GROUP BY id_user ORDER BY  created_at DESC ');
+                            while ($ctt = mysqli_fetch_array($CTT)) {
+                                $users = mysqli_query($kon, "SELECT * FROM users where id='$ctt[id_user]'");
+                                while ($use = mysqli_fetch_array($users)) {
+                                    if ($use['id'] == $ctt['id_user']) {
+                            ?>
+
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $use['name'] }}</td>
+                                    <td>{{ $use['jk'] }}</td>
+                                    <td>
+                                        <a href="{{ route('petugas.ctt_perawat',$use['id']) }}"
+                                        class="btn btn-sm btn-info">Riwayat Rawat</a>
+                                        <a href="{{ route('petugas.ctt_persalinan',$use['id']) }}"
+                                        class="btn btn-sm btn-primary">Riwayat Bidan</a>
+                                    </td>
+
+                                    <?php
+
+                                    }
+                                    break;
+                                }
+                            }
+                            ?>
+                                </tr>
                             </tbody>
                         </table>
+                      
                     </div>
                 </div>
             </div>

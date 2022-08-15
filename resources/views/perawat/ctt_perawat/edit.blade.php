@@ -34,6 +34,7 @@
                                 <textarea name="soap" id="" cols="30" rows="10" class="form-control" placeholder="Soap"></textarea>
                             </div>
                             <div class="form-group">
+                                <input type="hidden" value="1" name="ed">
                                 <input type="submit" value="Update" class="btn btn-sm btn-success">
                             </div>
                         </form>

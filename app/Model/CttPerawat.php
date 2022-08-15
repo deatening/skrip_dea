@@ -13,6 +13,7 @@ class CttPerawat extends Model
         'tgl',
         'soap',
         'id_perawat',
+        'ed',
     ];
 
     public function Pasien(){

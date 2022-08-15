@@ -111,6 +111,7 @@
                                                     target="_blank" class="btn btn-sm btn-success">Lab</a>
                                                 <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"
                                                     class="btn btn-sm btn-info">Diagnosa</a>
+                                              
                                             @endif
                                             @if ($item->status == '1')
                                                 @if ($item->ver == '0')

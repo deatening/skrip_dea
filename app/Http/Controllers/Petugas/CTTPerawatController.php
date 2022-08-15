@@ -59,4 +59,10 @@ class CTTPerawatController extends Controller
         $ctt = CttPerawat::whereDate('created_at', $tgl)->get();
         return view('petugas.ctt_perawat.lap_cttp', compact('ctt', 'no','tgl'));
     }
+
+    public function print($id){
+        $ctt = CttPerawat::where('id',$id)->first();
+        $rawat = Rawat::where('id_ctt',$ctt->id)->first();
+        return view('petugas.ctt_perawat.print',compact('ctt','rawat'));
+    }
 }

@@ -103,6 +103,8 @@
                                                 @else
                                                     <a href="{{ route('petugas.ctt_persalinan.asuhan', $item->Asuhan->id_ctt_p) }}"
                                                         class="btn btn-sm btn-warning">Asuhan Kebidanan</a>
+                                                    <a href="{{ route('petugas.ctt_persalinan.print', $item->id) }}" target="_blank"
+                                                        class="btn btn-sm btn-info">Print</a>
                                                 @endif
                                             </td>
                                         </tr>

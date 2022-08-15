@@ -40,6 +40,7 @@ Route::get('petugas/ctt_perawat/{id}','Petugas\CTTPerawatController@index')->nam
 Route::post('petugas/ctt_perawat/store','Petugas\CTTPerawatController@store')->name('petugas.ctt_perawat.store');
 Route::get('petugas/ctt_perawat/{id}/show_lab','Petugas\CTTPerawatController@show_lab')->name('petugas.ctt_perawat.show_lab');
 Route::get('petugas/ctt_perawat/{id}/show','Petugas\CTTPerawatController@show')->name('petugas.ctt_perawat.show');
+Route::get('petugas/ctt_perawat/{id}/print','Petugas\CTTPerawatController@print')->name('petugas.ctt_perawat.print');
 Route::post('petugas/ctt_perawat/{id}/verifikasi','Petugas\CTTPerawatController@verifikasi')->name('petugas.ctt_perawat.verifikasi');
 Route::get('petugas/lap_ctt_p','Petugas\CTTPerawatController@laporan_cttP')->name('petugas.laporan_ctt_p');
 Route::post('petugas/lap_ctt_p/store','Petugas\CTTPerawatController@store_laporan_cttP')->name('petugas.lap_ctt_p.store');
@@ -50,6 +51,7 @@ Route::post('petugas/ctt_persalinan/store','Petugas\CTTPersalinanController@stor
 Route::get('petugas/ctt_persalinan/{id}/asuhan','Petugas\CTTPersalinanController@asuhan')->name('petugas.ctt_persalinan.asuhan');
 Route::get('petugas/lap_ctt_per','Petugas\CTTPersalinanController@laporan_cttPer')->name('petugas.laporan_ctt_per');
 Route::post('petugas/lap_ctt_per/store','Petugas\CTTPersalinanController@store_laporan_cttPer')->name('petugas.lap_ctt_per.store');
+Route::get('petugas/ctt_persalinan/{id}/print','Petugas\CTTPersalinanController@print')->name('petugas.ctt_persalinan.print');
 // Perawat/CTT_Perawat
 Route::get('perawat/ctt_perawat','perawat\CTTPerawatController@index')->name('perawat.ctt_perawat');
 Route::get('perawat/ctt_perawat/{id}','perawat\CTTPerawatController@edit')->name('perawat.ctt_perawat.edit');
