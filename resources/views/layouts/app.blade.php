@@ -86,12 +86,12 @@
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.laporan_ctt_p') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Catatan Rawat Inap</span></a>
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Riwayat Rawat</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.laporan_ctt_per') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Catatan Persalinan</span></a>
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Riwayat Kebidanan</span></a>
                                 </li>
                             @elseif(Auth::user()->role == '2')
                                 <li class="sidebar-item">
@@ -115,24 +115,29 @@
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/home"
                                         aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">Dokter</span></a>
+                                            class="hide-menu">{{Auth::user()->bidang}}</span></a>
                                 </li>
-                                <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                        href="{{ route('dokter.rawat') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
-                                            Dokter</span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.asuhan') }}"
-                                        aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">Catatan Persalinan</span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.rawat.jenis') }}"
-                                        aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">Data Rawat</span></a>
-                                </li>
+                                @if(Auth::user()->bidang == "Bidan")
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.asuhan') }}"
+                                            aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                                class="hide-menu">Catatan Persalinan</span></a>
+                                    </li>
+                                @else
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                            href="{{ route('dokter.rawat') }}" aria-expanded="false"><i
+                                                class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
+                                                Dokter</span></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.rawat.jenis') }}"
+                                            aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                                class="hide-menu">Data Rawat</span></a>
+                                    </li>
+                                @endif
+                               
+                                
                             @endif
                             <li class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark sidebar-link"

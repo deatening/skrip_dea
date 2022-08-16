@@ -77,9 +77,9 @@
                                     <th>Tanggal</th>
                                     <th>Nama Pasien</th>
                                     <th>Nama Perawat</th>
-                                    <th>HPHT</th>
+                                    <th>Anamnese</th>
                                     <th>Terapi</th>
-                                    <th>Nama Bidan</th>
+                                    <!-- <th>Nama Bidan</th> -->
                                     <td>Action</td>
                                 </tr>
                             </thead>
@@ -96,7 +96,7 @@
                                             <td>{{ $item->Perawat->name }}</td>
                                             <td>{{ $item->persalinan }}</td>
                                             <td>{{ $item->terapi }}</td>
-                                            <td>{{ $item->penolong }}</td>
+                                            <!-- <td>{{ $item->penolong }}</td> -->
                                             <td>
                                                 @if ($item->status == '0')
                                                     -

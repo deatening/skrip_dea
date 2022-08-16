@@ -18,8 +18,9 @@ class CTTController extends Controller
 
     public function jalan($id){
         $no = 1;
-        $rawat = CttPerawat::where('ver',$id)->get();
-        return view('dokter.rawat.jalan',compact('no','rawat'));
+        $jl =$id;
+        $rawat = Rawat::all();
+        return view('dokter.rawat.jalan',compact('no','rawat','jl'));
     }
     public function edit($id){
         $rawat = Rawat::find($id);
@@ -27,14 +28,14 @@ class CTTController extends Controller
     }
 
     public function show($id){
-        // $rawat = Rawat::find($id);
-        $rawat = Rawat::where('id_ctt',$id)->first();
+        $rawat = Rawat::find($id);
+        // $rawat = Rawat::where('id_ctt',$id)->first();
         return view('dokter.rawat.show',compact('rawat'));
     }
 
     public function show_lab($id){
-        // $rawat = Rawat::find($id);
-        $rawat = Rawat::where('id_ctt',$id)->first();
+        $rawat = Rawat::find($id);
+        // $rawat = Rawat::where('id_ctt',$id)->first();
         return view('dokter.rawat.lab',compact('rawat'));
     }
 

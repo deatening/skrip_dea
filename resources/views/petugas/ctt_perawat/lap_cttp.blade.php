@@ -93,13 +93,14 @@
                                             <td>{{ $item->Perawat->name }}</td>
                                             <td>{{ $item->soap }}</td>
                                             <td>
-                                                @if ($item->ver == '0')
+                                                {{$item->Rawat->rj}}
+                                                <!-- @if ($item->ver == '0')
                                                     Belum Dipilih
                                                 @elseif ($item->ver == '1')
                                                     Rawat Inap
                                                 @else
                                                     Rawat Jalan
-                                                @endif
+                                                @endif -->
                                             </td>
                                             <td style="width: 220px;">
                                                 @if ($item->status == '1')

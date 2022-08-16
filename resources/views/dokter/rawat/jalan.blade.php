@@ -50,29 +50,44 @@
                             <tbody>
 
                                 @foreach ($rawat as $item)
-                                    @if ($item->status == '1')
+                                    @if ($jl =='2' && $item->rj=="Rawat Jalan")
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>
-                                                <?php $tgl = date('Y-m-d', strtotime($item->created_at)); ?>
+                                                <?php $tgl = date('Y-m-d', strtotime($item->CTTPerawat->created_at)); ?>
                                                 {{ tgl_indo($tgl) }}
                                             </td>
-                                            <td>{{ $item->Pasien->name }}</td>
-                                            <td>{{ $item->Perawat->name }}</td>
-                                            <td>{{ $item->soap }}</td>
+                                            <td>{{ $item->CTTPerawat->Pasien->name }}</td>
+                                            <td>{{ $item->CTTPerawat->Perawat->name }}</td>
+                                            <td>{{ $item->CTTPerawat->soap }}</td>
                                             <td>
-                                                @if ($item->ver == '0')
-                                                    Belum Dipilih
-                                                @elseif ($item->ver == '1')
-                                                    Rawat Inap
-                                                @else
-                                                    Rawat Jalan
-                                                @endif
+                                                   {{$item->rj}}
                                             </td>
                                             <td>
-                                                <a href="{{ route('petugas.ctt_perawat.show_lab', $item->id) }}"
+                                                <a href="{{ route('petugas.ctt_perawat.show_lab', $item->CTTPerawat->id) }}"
                                                     target="_blank" class="btn btn-sm btn-success">Lab</a>
-                                                <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"
+                                                <a href="{{ route('petugas.ctt_perawat.show', $item->CTTPerawat->id) }}"
+                                                    class="btn btn-sm btn-info">Diagnosa</a>
+
+                                            </td>
+                                        </tr>
+                                        @elseif ($jl =='1' && $item->rj=="Rawat Inap")
+                                    <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td>
+                                                <?php $tgl = date('Y-m-d', strtotime($item->CTTPerawat->created_at)); ?>
+                                                {{ tgl_indo($tgl) }}
+                                            </td>
+                                            <td>{{ $item->CTTPerawat->Pasien->name }}</td>
+                                            <td>{{ $item->CTTPerawat->Perawat->name }}</td>
+                                            <td>{{ $item->CTTPerawat->soap }}</td>
+                                            <td>
+                                                   {{$item->rj}}
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('petugas.ctt_perawat.show_lab', $item->CTTPerawat->id) }}"
+                                                    target="_blank" class="btn btn-sm btn-success">Lab</a>
+                                                <a href="{{ route('petugas.ctt_perawat.show', $item->CTTPerawat->id) }}"
                                                     class="btn btn-sm btn-info">Diagnosa</a>
 
                                             </td>
