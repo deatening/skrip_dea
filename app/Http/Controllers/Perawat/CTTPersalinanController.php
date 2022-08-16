@@ -28,6 +28,7 @@ class CTTPersalinanController extends Controller
         $ctt->persalinan = $request->persalinan;
         $ctt->terapi = $request->terapi;
         $ctt->penolong = $request->penolong;
+        $ctt->ed = '1';
         $ctt->save();
         return redirect()->route('perawat.ctt_persalinan');
     }

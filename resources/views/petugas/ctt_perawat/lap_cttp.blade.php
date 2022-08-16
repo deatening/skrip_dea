@@ -12,15 +12,17 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{route('petugas.lap_ctt_p.store')}}" method="post">
+                        <form action="{{ route('petugas.lap_ctt_p.store') }}" method="post">
                             @csrf
                             <table>
                                 <tr>
                                     <td>
-                                        <input type="date" value="" name="tgl" id="" class="form-control">
+                                        <input type="date" value="" name="tgl" id=""
+                                            class="form-control">
                                     </td>
                                     <td>
-                                        <input type="submit" class="btn btb-sm btn-primary" value="cari" name="" id="">
+                                        <input type="submit" class="btn btb-sm btn-primary" value="cari" name=""
+                                            id="">
                                     </td>
                                 </tr>
                             </table>
@@ -33,9 +35,9 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">Catatan Perawat
-                                @if (isset($ctt))
-                                {{$tgl}}
-                                @endif
+                        @if (isset($ctt))
+                            {{ $tgl }}
+                        @endif
                         <div style="float: right">
 
                         </div>
@@ -108,6 +110,8 @@
                                                         target="_blank" class="btn btn-sm btn-success">Lab</a>
                                                     <a href="{{ route('petugas.ctt_perawat.show', $item->id) }}"
                                                         class="btn btn-sm btn-info">Diagnosa</a>
+                                                    <a href="{{ route('petugas.ctt_perawat.print', $item->id) }}"target="_blank"
+                                                        class="btn btn-sm btn-primary">Print</a>
                                                 @endif
                                             </td>
                                         </tr>

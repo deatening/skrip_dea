@@ -104,7 +104,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                @if ($item->ed != '0')
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
                                                     data-target="#exampleModal{{ $item->id }}">
                                                     Kirim Laporan
@@ -140,6 +140,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                @endif
                                             @else
                                                 <a href="{{ route('dokter.rawat.show', $item->id) }}"
                                                     class="btn btn-sm btn-info">Diagnosa</a>

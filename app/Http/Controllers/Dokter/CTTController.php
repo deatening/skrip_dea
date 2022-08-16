@@ -60,6 +60,7 @@ class CTTController extends Controller
         $tujuan_upload = 'data/lab';
         $file->move($tujuan_upload, $nama_file);
         $rawat->lab = $nama_file;
+        $rawat->ed = '1';
         $rawat->save();
         return redirect('dokter/rawat');
     }
@@ -73,6 +74,8 @@ class CTTController extends Controller
     public function jenis(){
         return view('dokter.rawat.rawat');
     }
+
+  
    
 
 }

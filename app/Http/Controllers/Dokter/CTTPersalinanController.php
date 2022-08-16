@@ -44,6 +44,7 @@ class CTTPersalinanController extends Controller
         $asuhan->riwayat_ginekeologi = $request->riwayat_ginekologi;
         $asuhan->diagnosa = $request->diagnosa;
         $asuhan->rj = $request->rj;
+        $asuhan->ed ='1';
         $asuhan->status = '1';
         $asuhan->save();
         return redirect('dokter/asuhan');

@@ -13,7 +13,7 @@ class CTTPerawatController extends Controller
 {
     public function index(){
         $no = 1;
-        $ctt = CttPerawat::where('id_perawat',Auth::user()->id)->get();
+        $ctt = CttPerawat::where('id_perawat',Auth::user()->id)->orderBy('created_at','DESC')->get();
         $user = User::where('role','3')->get();
         return view('perawat.ctt_perawat.index',compact('no','ctt','user'));
     }
@@ -26,6 +26,7 @@ class CTTPerawatController extends Controller
     public function update(Request $request,$id){
         $ctt = CttPerawat::find($id); 
         $ctt->soap = $request->soap;
+        $ctt->ed = $request->ed;
         $ctt->save();
         return redirect()->route('perawat.ctt_perawat');
     }

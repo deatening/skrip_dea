@@ -21,7 +21,12 @@ class CTTPersalinanController extends Controller
         $simpan = CttPersalinan::create($request->all());
         return redirect()->route('petugas.ctt_persalinan',$request->id_user);
     }
-    
+    public function print($id){
+        $ctt = CttPersalinan::find($id);
+        $asuhan = Asuhan::where('id_ctt_p',$ctt->id)->first();
+        return view('petugas.ctt_persalinan.print',compact('asuhan','ctt'));
+    }
+
     public function asuhan($id){
         $asuhan = Asuhan::where('id_ctt_p',$id)->first();
         return view('petugas.ctt_persalinan.asuhan',compact('asuhan'));

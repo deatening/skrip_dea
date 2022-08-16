@@ -11,11 +11,11 @@ class PaseienController extends Controller
 {
     public function index(){
         $no = 1;
-        $pengguna = CttPerawat::orderBy('created_at','DESC')
-        ->distinct('created_at','DESC')
-        ->get(['id_user']);
-        $user = User::where('role','0')->get();
-        return view('petugas.pasien.index',compact('user','no','pengguna'));
+        // $pengguna = CttPerawat::orderBy('created_at','DESC')
+        // ->distinct('created_at','DESC')
+        // ->get(['id_user']);
+        $user = CttPerawat::orderBy('created_at','DESC')->get();
+        return view('petugas.pasien.index',compact('user','no'));
     }
 
     public function create(){
@@ -24,6 +24,7 @@ class PaseienController extends Controller
 
     public function store(Request $request){
         $simpan = User::create($request->all());
-        return redirect('petugas/pasien');
+        
+        return redirect('petugas/ctt_perawat/'.$simpan->id);
     }
 }
