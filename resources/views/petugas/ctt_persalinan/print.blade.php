@@ -112,3 +112,6 @@ function tgl_indo($tanggal)
         </div>
     </div>
 </div>
+<script>
+    window.print();
+</script>
