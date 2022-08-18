@@ -28,15 +28,22 @@
                             </thead>
                             <tbody>
                                 <?php
+                                //koneksi ke database
                             $kon = mysqli_connect('localhost', 'root', '', 'skripsi_dea');
+                            // Mengambil data yang ada di dalam table ctt_perawat
                             $CTT = mysqli_query($kon, 'SELECT * FROM ctt_perawat GROUP BY id_user ORDER BY  created_at DESC ');
+                           //menampilkan data ctt_perawat
                             while ($ctt = mysqli_fetch_array($CTT)) {
-                                $users = mysqli_query($kon, "SELECT * FROM users where id='$ctt[id_user]'");
-                                while ($use = mysqli_fetch_array($users)) {
-                                    if ($use['id'] == $ctt['id_user']) {
+                            // Mengambil data yang ada di dalam table user
+                            $users = mysqli_query($kon, "SELECT * FROM users where id='$ctt[id_user]'");
+                           //menampilkan data user
+                           while ($use = mysqli_fetch_array($users)) {
+                                //   jika data user dan data ctt perawat sama berdasarkan id user maka data akan tampil
+                            if ($use['id'] == $ctt['id_user']) {
                             ?>
 
                                 <tr>
+                                    <!-- menampilkan data dihalaman pasien -->
                                     <td>{{ $no++ }}</td>
                                     <td>{{ $use['name'] }}</td>
                                     <td>{{ $use['jk'] }}</td>
