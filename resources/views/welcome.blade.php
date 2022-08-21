@@ -63,7 +63,7 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-color: ;">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -85,7 +85,7 @@
                     <img src="1.jpeg" style="width: 250px;" alt="">
                     <img src="3.jpeg" style="width: 250px;" alt="">
                 </div>
-                <h1>Puskesmas Long Hubung</h1>
+                <h1 style="color:green ;font-size:px;">Puskesmas Long Hubung</h1>
                 <div class="links">
                  
                 </div>
