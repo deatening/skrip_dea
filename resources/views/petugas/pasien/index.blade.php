@@ -21,7 +21,7 @@
                         <table class="table table-sm table-bordered" id="zero_config">
                             <thead>
                                 <tr>
-                                    <th>No</th>
+                                    <th style="color :;">No</th>
                                     <th>Nama Pasien</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Action</th>
@@ -45,7 +45,7 @@
 
                                 <tr>
                                     <!-- menampilkan data dihalaman pasien -->
-                                    <td>{{ $no++ }}</td>
+                                    <td style="color: ;">{{ $no++ }}</td>
                                     <td>{{ $use['name'] }}</td>
                                     <td>{{ $use['jk'] }}</td>
                                     <td>

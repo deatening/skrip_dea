@@ -20,7 +20,7 @@
                                 <input type="text" name="name" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="">Tempat Lahir</label>
+                                <label style="color: ;" for="">Tempat Lahir</label>
                                 <input type="text" name="tmp_lahir" class="form-control">
                             </div>
                             <div class="form-group">
