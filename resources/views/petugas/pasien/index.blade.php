@@ -7,6 +7,7 @@
                 <div class="card">
                     <div class="card-header">Pasien
                         <div style="float: right">
+                            <!-- nambah data pasien -->
                             <a href="{{ route('petugas.pasien.create') }}" class="btn btn-sm btn-primary">+</a>
                         </div>
                     </div>

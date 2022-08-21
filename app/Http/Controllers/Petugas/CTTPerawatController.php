@@ -12,23 +12,29 @@ class CTTPerawatController extends Controller
 {
     public function index($id)
     {
+        // untuk nomor 
         $no = 1;
+        // menampilkan data user berdasarkan role 2 yaitu perawat
         $user = User::where('role', '2')->get();
+        // menampilkan data user berdasakan id user 
         $pasien = User::find($id);
+        // menampilkan data catatatn perawat berdasarkan id user
         $ctt = CttPerawat::where('id_user', $id)->get();
+        // menampilkan data di view petugas, ctt_perawat dan file index 
         return view('petugas.ctt_perawat.index', compact('user', 'no', 'ctt', 'pasien'));
     }
 
     public function store(Request $request)
     {
+        // menyimpan data ctt_perawat
         $simpan = CttPerawat::create($request->all());
         return redirect()->route('petugas.ctt_perawat', $request->id_user);
     }
 
     public function show($id)
     {
+        // menampilkan data rawat
         $rawat = Rawat::where('id_ctt',$id)->first();
-        // $rawat = Rawat::find($id);
         return view('petugas.ctt_perawat.show', compact('rawat'));
     }
 

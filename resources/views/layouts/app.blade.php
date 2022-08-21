@@ -27,9 +27,9 @@
     </div>
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-        <header class="topbar" data-navbarbg="skin5">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5">
+        <header class="topbar" data-navbarbg="skin5" >
+            <nav class="navbar top-navbar navbar-dark" style="background-color: ;color: ;">
+                <div class="navbar-header" data-logobg="skin5" style="background-color: ;color: ;">
                     <a class="navbar-brand" href="index.html">
                         <b class="logo-icon ps-2">
                             {{-- <img src="{{ asset('logo.jpeg') }}" alt="homepage"
@@ -45,7 +45,7 @@
                             class="ti-menu ti-close"></i></a>
                 </div>
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <ul class="navbar-nav float-start me-auto">
+                    <ul class="navbar-nav float-start me-auto" style="background-color: ;color: ;"> 
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)"
                                 data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
@@ -55,8 +55,8 @@
             </nav>
         </header>
         <aside class="left-sidebar" data-sidebarbg="skin5">
-            <div class="scroll-sidebar">
-                <nav class="sidebar-nav">
+            <div class="scroll-sidebar" style="background-color: ;color: ;">
+                <nav class="sidebar-nav" style="background-color: ;color:yellow ;">
                     <ul id="sidebarnav" class="pt-4">
 
                         @if (Auth::user() == null)
