@@ -55,8 +55,8 @@
             </nav>
         </header>
         <aside class="left-sidebar" data-sidebarbg="skin5">
-            <div class="scroll-sidebar" style="background-color: ;color: ;">
-                <nav class="sidebar-nav" style="background-color: ;color:yellow ;">
+            <div class="scroll-sidebar" style="background-color: ;">
+                <nav class="sidebar-nav" style="background-color: ;">
                     <ul id="sidebarnav" class="pt-4">
 
                         @if (Auth::user() == null)
@@ -65,75 +65,75 @@
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/home"
                                         aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">Petugas</span></a>
+                                            class="hide-menu" style="color: ;">Petugas</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.perawat') }}" aria-expanded="false"><i
                                             class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">Perawat</span></a>
+                                            class="hide-menu" style="color: ;">Perawat</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.dokter') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dokter</span></a>
+                                            class="mdi mdi-view-dashboard" style="color: ;"></i><span class="hide-menu">Dokter</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.pasien') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Pasien</span></a>
+                                            class="mdi mdi-view-dashboard" style="color: ;"></i><span class="hide-menu">Pasien</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.laporan_ctt_p') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Riwayat Rawat</span></a>
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu" style="color: ;">Laporan Riwayat Rawat</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('petugas.laporan_ctt_per') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Laporan Riwayat Kebidanan</span></a>
+                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu" style="color: ;">Laporan Riwayat Kebidanan</span></a>
                                 </li>
                             @elseif(Auth::user()->role == '2')
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/home"
                                         aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">Perawat</span></a>
+                                            class="hide-menu" style="color: ;">Perawat</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('perawat.ctt_perawat') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
+                                            class="mdi mdi-view-dashboard" style="color: ;"></i><span class="hide-menu">Catatan
                                             Perawat</span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                         href="{{ route('perawat.ctt_persalinan') }}" aria-expanded="false"><i
-                                            class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
+                                            class="mdi mdi-view-dashboard" style="color: ;"></i><span class="hide-menu">Catatan
                                             Persalinan</span></a>
                                 </li>
                             @elseif(Auth::user()->role == '3')
                                 <li class="sidebar-item">
                                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/home"
                                         aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                            class="hide-menu">{{Auth::user()->bidang}}</span></a>
+                                            class="hide-menu" style="color: ;">{{Auth::user()->bidang}}</span></a>
                                 </li>
                                 @if(Auth::user()->bidang == "Bidan")
                                     <li class="sidebar-item">
                                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.asuhan') }}"
                                             aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                                class="hide-menu">Catatan Persalinan</span></a>
+                                                class="hide-menu" style="color: ;">Catatan Persalinan</span></a>
                                     </li>
                                 @else
                                     <li class="sidebar-item">
                                         <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                             href="{{ route('dokter.rawat') }}" aria-expanded="false"><i
-                                                class="mdi mdi-view-dashboard"></i><span class="hide-menu">Catatan
+                                                class="mdi mdi-view-dashboard"></i><span class="hide-menu" style="color: ;">Catatan
                                                 Dokter</span></a>
                                     </li>
                                     <li class="sidebar-item">
                                         <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dokter.rawat.jenis') }}"
                                             aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                                class="hide-menu">Data Rawat</span></a>
+                                                class="hide-menu" style="color: ;">Data Rawat</span></a>
                                     </li>
                                 @endif
                                
@@ -145,7 +145,7 @@
                                     onclick="event.preventDefault();
                                               document.getElementById('logout-form').submit();"
                                     aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                        class="hide-menu">Log Out</span></a>
+                                        class="hide-menu" style="color: ;">Log Out</span></a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                     style="display: none;">
                                     @csrf

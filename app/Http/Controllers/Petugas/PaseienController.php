@@ -14,7 +14,7 @@ class PaseienController extends Controller
         // $pengguna = CttPerawat::orderBy('created_at','DESC')
         // ->distinct('created_at','DESC')
         // ->get(['id_user']);
-        $user = CttPerawat::orderBy('created_at','DESC')->get();
+        $user = CttPerawat::orderBy('updated_at','DESC')->get();
         $user->reverse();
         return view('petugas.pasien.index',compact('user','no'));
     }
